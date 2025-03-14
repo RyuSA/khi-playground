@@ -69,16 +69,3 @@ nodes:
     apiVersion: kubelet.config.k8s.io/v1beta1
     logging:
       format: json
-- role: worker
-  extraMounts:
-    - hostPath: mnt/kind-worker3/containers
-      containerPath: /mnt/log
-      readOnly: false
-  kubeadmConfigPatches:
-  - |
-    kind: KubeletConfiguration
-    metadata:
-      name: config
-    apiVersion: kubelet.config.k8s.io/v1beta1
-    logging:
-      format: json
